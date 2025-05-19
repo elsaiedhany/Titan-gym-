@@ -3,106 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>النادي الرياضي</title>
+    <title>Titan Gym</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">الصفحة الرئيسية</a></li>
-                <li><a href="#">خطط الاشتراك</a></li>
-                <li><a href="#">جدول الحصص</a></li>
-                <li><a href="#">المدربين</a></li>
-                <li><a href="#">النظام الغذائي</a></li>
-                <li><a href="#">العضوية</a></li>
-                <li><a href="#">المعرض</a></li>
-                <li><a href="#">تواصل معنا</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="images/logo.png" alt="Titan Gym Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">الصفحة الرئيسية</a></li>
+                    <li><a href="#classes">الحصص</a></li>
+                    <li><a href="#trainers">المدربون</a></li>
+                    <li><a href="#pricing">الأسعار</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                    <li class="cta"><a href="#">انضم الآن</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="hero">
-            <div class="hero-content">
-                <h1>نادي رياضي متكامل لصحتك ولياقتك</h1>
-                <p>انضم إلينا الآن واستمتع بتجربة رياضية فريدة!</p>
-                <a href="#" class="button">سجل الآن أو احصل على تجربة مجانية</a>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero-image.jpg" alt="صورة ترويجية للنادي">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>ارتقِ بلياقتك البدنية مع Titan Gym</h1>
+                    <p>نقدم لك بيئة تدريبية محفزة ومدربين خبراء لتحقيق أهدافك الصحية والرياضية.</p>
+                    <a href="#" class="button primary">ابدأ رحلتك الآن</a>
+                    <a href="#" class="button secondary"><i class="fa fa-dumbbell"></i> استكشف حصصنا</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-image.jpg" alt="صورة ترويجية للنادي">
+                </div>
             </div>
         </section>
 
-        <section id="news">
-            <h2>آخر الأخبار والعروض</h2>
-            <div class="news-item">
-                <h3>كورس جديد لليوجا المتقدمة</h3>
-                <p>يسرنا الإعلان عن إطلاق كورس جديد لليوجا المتقدمة يبدأ في [تاريخ].</p>
-            </div>
-            <div class="news-item">
-                <h3>خصم خاص على الاشتراكات السنوية</h3>
-                <p>احصل على خصم 20% عند الاشتراك في الخطة السنوية هذا الشهر!</p>
+        <section id="classes" class="section-padding">
+            <div class="container">
+                <h2>حصصنا التدريبية المتنوعة</h2>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <i class="fas fa-yoga"></i>
+                        <h3>يوجا</h3>
+                        <p>استرخِ وجدد طاقتك مع حصص اليوجا التي تناسب جميع المستويات.</p>
+                        <a href="#">اعرف المزيد</a>
+                    </div>
+                    <div class="class-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>كارديو</h3>
+                        <p>حسن صحة قلبك وحرق السعرات الحرارية مع تمارين الكارديو الممتعة.</p>
+                        <a href="#">اعرف المزيد</a>
+                    </div>
+                    <div class="class-card">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>رفع الأثقال</h3>
+                        <p>ابنِ قوتك العضلية وحسن قوامك مع تدريبات رفع الأثقال الاحترافية.</p>
+                        <a href="#">اعرف المزيد</a>
+                    </div>
+                    <div class="class-card">
+                        <i class="fas fa-fire"></i>
+                        <h3>تمارين HIIT</h3>
+                        <p>احصل على أقصى استفادة من وقتك مع تمارين HIIT عالية الكثافة.</p>
+                        <a href="#">اعرف المزيد</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="new-course">
-            <h2>كورسنا الجديد</h2>
-            <div class="course-details">
-                <h3>[اسم الكورس الجديد]</h3>
-                <p>[وصف مختصر للكورس ومميزاته].</p>
-                <a href="#" class="button">اعرف المزيد</a>
-            </div>
-            <div class="course-image">
-                <img src="images/new-course.jpg" alt="صورة للكورس الجديد">
+        <section id="trainers" class="section-padding bg-light">
+            <div class="container">
+                <h2>مدربونا الخبراء</h2>
+                <div class="trainers-grid">
+                    <div class="trainer-card">
+                        <img src="images/trainer1.jpg" alt="المدرب الأول">
+                        <h3>[اسم المدرب 1]</h3>
+                        <p>مدرب لياقة بدنية متخصص في [تخصصه].</p>
+                    </div>
+                    <div class="trainer-card">
+                        <img src="images/trainer2.jpg" alt="المدرب الثاني">
+                        <h3>[اسم المدرب 2]</h3>
+                        <p>مدربة يوجا وبيلاتس مع خبرة واسعة.</p>
+                    </div>
+                    <div class="trainer-card">
+                        <img src="images/trainer3.jpg" alt="المدرب الثالث">
+                        <h3>[اسم المدرب 3]</h3>
+                        <p>مدرب رفع أثقال وتغذية رياضية معتمد.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="subscription-plans">
-            <h2>خطط الاشتراك</h2>
-            <div class="plans-container">
-                <div class="plan">
-                    <h3>شهري</h3>
-                    <p class="price">500 جنيه مصري/الشهر</p>
-                    <ul>
-                        <li>عدد غير محدود من الحصص</li>
-                        <li>الوصول إلى جميع الأجهزة</li>
-                        <li>دخول مجاني لحصص البخار والساونا</li>
-                    </ul>
-                    <a href="#" class="button">اشترك الآن</a>
+        <section id="pricing" class="section-padding">
+            <div class="container">
+                <h2>خطط الاشتراك المميزة</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>شهري</h3>
+                        <p class="price"><span>500</span> جنيه/الشهر</p>
+                        <ul>
+                            <li>دخول غير محدود إلى النادي</li>
+                            <li>جميع الحصص الجماعية</li>
+                            <li>استشارة مجانية مع مدرب</li>
+                        </ul>
+                        <a href="#" class="button primary">اشترك الآن</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>ربع سنوي</h3>
+                        <p class="price"><span>1350</span> جنيه/3 أشهر</p>
+                        <ul>
+                            <li>دخول غير محدود إلى النادي</li>
+                            <li>جميع الحصص الجماعية</li>
+                            <li>جلستين تدريب شخصي مجانيتين</li>
+                            <li>خصم 10% على خدمات أخرى</li>
+                        </ul>
+                        <a href="#" class="button primary">اشترك الآن</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>سنوي</h3>
+                        <p class="price"><span>4800</span> جنيه/السنة</p>
+                        <ul>
+                            <li>دخول غير محدود إلى النادي</li>
+                            <li>جميع الحصص الجماعية</li>
+                            <li>4 جلسات تدريب شخصي مجانية</li>
+                            <li>خصم 15% على خدمات أخرى</li>
+                            <li>هدية خاصة عند الاشتراك</li>
+                        </ul>
+                        <a href="#" class="button primary">اشترك الآن</a>
+                    </div>
                 </div>
-                <div class="plan popular">
-                    <h3>ربع سنوي <span class="popular-badge">الأكثر شيوعاً</span></h3>
-                    <p class="price">1350 جنيه مصري/3 أشهر</p>
-                    <ul>
-                        <li>عدد غير محدود من الحصص</li>
-                        <li>الوصول إلى جميع الأجهزة</li>
-                        <li>دخول مجاني لحصص البخار والساونا</li>
-                        <li>جلسة تدريب شخصي مجانية شهرياً</li>
-                    </ul>
-                    <a href="#" class="button">اشترك الآن</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding bg-light">
+            <div class="container">
+                <h2>تواصل معنا</h2>
+                <div class="contact-details">
+                    <div>
+                        <h3>موقعنا</h3>
+                        <p>[عنوان النادي]</p>
+                    </div>
+                    <div>
+                        <h3>هاتف</h3>
+                        <p>[رقم هاتف النادي]</p>
+                    </div>
+                    <div>
+                        <h3>ساعات العمل</h3>
+                        <p>من السبت إلى الخميس: 7 صباحًا - 10 مساءً</p>
+                        <p>الجمعة: 9 صباحًا - 7 مساءً</p>
+                    </div>
                 </div>
-                <div class="plan">
-                    <h3>سنوي</h3>
-                    <p class="price">4800 جنيه مصري/السنة</p>
-                    <ul>
-                        <li>عدد غير محدود من الحصص</li>
-                        <li>الوصول إلى جميع الأجهزة</li>
-                        <li>دخول مجاني لحصص البخار والساونا</li>
-                        <li>جلستان تدريب شخصي مجانيتين شهرياً</li>
-                        <li>خصم 10% على خدمات التدليك</li>
-                    </ul>
-                    <a href="#" class="button">اشترك الآن</a>
-                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="اسمك">
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <textarea placeholder="رسالتك"></textarea>
+                    <button type="submit" class="button primary">أرسل رسالتك</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 النادي الرياضي. جميع الحقوق محفوظة.</p>
+        <div class="container">
+            <p>&copy; 2025 Titan Gym. جميع الحقوق محفوظة.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
