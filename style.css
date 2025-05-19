@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    direction: rtl; /* لغة عربية */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px 20px; /* زيادة الحشو الرأسي */
+    /* إضافة خلفية متدرجة */
+    background: linear-gradient(135deg, #a7e1eb, #3b82f6);
+    color: #fff; /* تغيير لون النص إلى الأبيض ليناسب الخلفية */
+    border-radius: 12px; /* زيادة استدارة الحواف */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل أكثر بروزًا */
+    margin-bottom: 30px; /* زيادة الهامش السفلي لفصل القسم */
+}
+
+.hero-content {
+    text-align: right; /* تغيير محاذاة النص إلى اليمين */
+}
+
+.hero-content h1 {
+    font-size: 3em; /* زيادة حجم الخط */
+    margin-bottom: 15px;
+    font-family: 'Cairo', sans-serif; /* استخدام خط عربي مميز (تحتاج إلى تضمينه في <head>) */
+    font-weight: bold; /* جعل الخط أكثر سمكًا */
+}
+
+.hero-content p {
+    font-size: 1.4em; /* زيادة حجم الخط */
+    margin-bottom: 30px;
+    line-height: 1.6; /* زيادة تباعد الأسطر لتحسين القراءة */
+}
+
+.button {
+    display: inline-block;
+    background-color: #ffc107; /* تغيير لون الزر إلى الأصفر */
+    color: #333; /* تغيير لون نص الزر إلى الأسود */
+    padding: 12px 25px; /* زيادة الحشو الداخلي للزر */
+    text-decoration: none;
+    border-radius: 8px; /* زيادة استدارة حواف الزر */
+    font-size: 1.1em; /* زيادة حجم خط الزر */
+    font-weight: bold; /* جعل نص الزر أكثر سمكًا */
+    transition: background-color 0.3s ease; /* إضافة تأثير انتقال عند التhover */
+}
+
+.button:hover {
+    background-color: #e0a800; /* تغيير لون الزر عند التhover */
+}
+
+.hero-image img {
+    max-width: 400px; /* تحديد عرض أقصى للصورة */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للصورة */
+}
+
+#news .news-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#news .news-item:last-child {
+    border-bottom: none;
+}
+
+#new-course {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 40px 20px;
+}
+
+.course-details {
+    text-align: center;
+}
+
+.course-details h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky; /* يمكنك تغييرها إلى fixed إذا أردت أن يظل في الأسفل دائمًا */
+    bottom: 0;
+    width: 100%;
+}
+
+/* تنسيقات قسم خطط الاشتراك */
+#subscription-plans {
+    text-align: center;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.plan {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+.plan h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.plan .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plan ul li {
+    margin-bottom: 8px;
+}
+
+.plan .button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.plan .button:hover {
+    background-color: #0056b3;
+}
+
+.plan.popular {
+    border: 2px solid #ffc107;
+    transform: scale(1.05); /* لجعل الخطة المميزة تبدو أكبر قليلاً */
+}
+
+.popular-badge {
+    background-color: #ffc107;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    position: relative;
+    top: -15px;
+    right: -15px;
+}
