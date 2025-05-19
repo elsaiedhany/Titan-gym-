@@ -122,16 +122,18 @@ header nav ul li.cta a:hover {
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button.primary {
     background-color: #ffc107;
     color: #333;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
 }
 
 .button.primary:hover {
     background-color: #e0a800;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
 }
 
 .button.secondary {
@@ -175,6 +177,7 @@ header nav ul li.cta a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .class-card i {
@@ -205,6 +208,11 @@ header nav ul li.cta a:hover {
     color: #0056b3;
 }
 
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* Trainers Section */
 .trainers-grid {
     display: grid;
@@ -219,6 +227,7 @@ header nav ul li.cta a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .trainer-card img {
@@ -240,15 +249,19 @@ header nav ul li.cta a:hover {
     font-size: 0.9em;
 }
 
+.trainer-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* Pricing Section */
-.pricing-grid {
+#pricing .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
-.pricing-card {
+#pricing .pricing-card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -257,30 +270,182 @@ header nav ul li.cta a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.pricing-card h3 {
+#pricing .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#pricing .pricing-card h3 {
     font-size: 2em;
     margin-bottom: 15px;
     color: #333;
 }
 
-.pricing-card .price {
+#pricing .pricing-card .price {
     font-size: 2.5em;
     font-weight: bold;
     color: #ffc107;
     margin-bottom: 20px;
 }
 
-.pricing-card .price span {
+#pricing .pricing-card .price span {
     font-size: 0.8em;
 }
 
-.pricing-card ul {
+#pricing .pricing-card ul {
     list-style: none;
     margin-bottom: 30px;
 }
 
-.pricing-card ul li {
+#pricing .pricing-card ul li {
     padding: 10px 0;
-    border-bottom: 1px solid #
+    border-bottom: 1px solid #ddd;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#pricing .pricing-card ul li:last-child {
+    border-bottom: none;
+}
+
+#pricing .pricing-card ul li i {
+    margin-left: 10px;
+    color: #28a745;
+}
+
+#pricing .pricing-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+#contact .contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#contact .contact-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#contact .contact-details p {
+    color: #666;
+}
+
+#contact .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact .contact-form input[type="text"],
+#contact .contact-form input[type="email"],
+#contact .contact-form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#contact .contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact .contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact .contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social-links a {
+    color: #fff;
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ffc107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin-bottom: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #hero .hero-content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #hero .hero-image {
+        max-width: 80%;
+    }
+
+    .classes-grid, .trainers-grid, .pricing-grid, .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+    footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .social-links {
+        margin-top: 15px;
+    }
+}
