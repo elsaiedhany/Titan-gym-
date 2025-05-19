@@ -1,90 +1,97 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNavUl = document.querySelector('.main-nav ul');
 
-    if (menuToggle && mainNavUl) {
-        menuToggle.addEventListener('click', function() {
-            mainNavUl.classList.toggle('active');
-            const isExpanded = mainNavUl.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-            if (isExpanded) {
-                menuToggle.textContent = '✕'; // Close icon
-                menuToggle.setAttribute('aria-label', 'إغلاق القائمة');
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Optional: Change burger icon to X and back
+            const icon = navToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                menuToggle.textContent = '☰'; // Menu icon
-                menuToggle.setAttribute('aria-label', 'فتح القائمة');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
 
-        // Close menu when a link is clicked (for single-page navigation)
-        document.querySelectorAll('.main-nav ul a').forEach(link => {
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (mainNavUl.classList.contains('active')) {
-                    mainNavUl.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuToggle.textContent = '☰';
-                    menuToggle.setAttribute('aria-label', 'فتح القائمة');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 }
             });
         });
     }
 
-    // Update current year in footer
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+    // Optional: Active link highlighting based on scroll (simple version)
+    // You might want a more robust solution for complex sites
+    const sections = document.querySelectorAll('main section');
+    const navLi = document.querySelectorAll('.nav-links li a');
 
-    // Basic Contact Form Submission (Placeholder for actual submission logic)
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-
-    if (contactForm && formMessage) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Basic validation (example)
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name === '' || email === '' || message === '') {
-                formMessage.textContent = 'يرجى ملء جميع الحقول المطلوبة.';
-                formMessage.className = 'form-message error'; // Add error class
-                return;
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Adjust offset if you have a fixed header
+            if (pageYOffset >= (sectionTop - sectionHeight / 3 - 80)) { // 80 is approx header height
+                current = section.getAttribute('id');
             }
+        });
 
-            // Simulate form submission
-            formMessage.textContent = 'شكراً لك! تم إرسال رسالتك بنجاح. (هذه رسالة تجريبية)';
-            formMessage.className = 'form-message success'; // Add success class
+        navLi.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+        // Ensure "الرئيسية" is active when at the very top
+        if (window.pageYOffset < sections[0].offsetTop - 80) {
+             navLi.forEach(a => a.classList.remove('active'));
+             const homeLink = document.querySelector('.nav-links a[href="#hero"]');
+             if (homeLink) homeLink.classList.add('active');
+        }
+    });
+
+
+    // Smooth scrolling for anchor links (if html scroll-behavior is not enough)
+    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //     anchor.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         const targetId = this.getAttribute('href');
+    //         const targetElement = document.querySelector(targetId);
+    //         if (targetElement) {
+    //             // Consider fixed header height if you have one
+    //             const headerOffset = 80; // Example: height of your fixed header
+    //             const elementPosition = targetElement.getBoundingClientRect().top;
+    //             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    //             window.scrollTo({
+    //                 top: offsetPosition,
+    //                 behavior: "smooth"
+    //             });
+    //         }
+    //     });
+    // });
+
+    // Simple Contact Form Submission (Frontend Only - Prevents actual submission)
+    // For a real form, you'd need backend code.
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual submission for this demo
+            alert('شكراً لك! تم استلام رسالتك (هذه مجرد محاكاة).');
+            // Here you would typically send data to a server using fetch() or XMLHttpRequest
             contactForm.reset(); // Clear the form
-
-            // IMPORTANT: For a real website, you would send the data to a server here
-            // using fetch() or XMLHttpRequest.
-            // Example:
-            // const formData = new FormData(contactForm);
-            // fetch('your-server-endpoint', {
-            //     method: 'POST',
-            //     body: formData
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Success:', data);
-            //     formMessage.textContent = 'تم إرسال رسالتك بنجاح!';
-            //     formMessage.className = 'form-message success';
-            //     contactForm.reset();
-            // })
-            // .catch((error) => {
-            //     console.error('Error:', error);
-            //     formMessage.textContent = 'حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.';
-            //     formMessage.className = 'form-message error';
-            // });
         });
     }
-
-    // Optional: Active link highlighting based on scroll position
-    // This is a bit more complex and can be added later if needed.
-    // It involves checking the scroll position against the position of each section.
 
 });
