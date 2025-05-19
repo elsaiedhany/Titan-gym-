@@ -3,142 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan Gym - صالة الأبطال</title>
-    <meta name="description" content="Titan Gym - وجهتك المثالية للياقة البدنية وبناء الأجسام. نقدم أفضل الكلاسات والمدربين.">
-    <link rel="stylesheet" href="style.css">
+    <title>جيم الأبطال - موقعك الرياضي الاحترافي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">
-                <a href="#">Titan Gym</a>
-            </div>
-            <nav class="main-nav">
-                <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
-                <ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">جيم الأبطال</a>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#hero">الرئيسية</a></li>
                     <li><a href="#about">من نحن</a></li>
-                    <li><a href="#classes">الكلاسات</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#trainers">المدربون</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
+                    <li><a href="#schedule">الجدول</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
-            </nav>
-        </div>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <main>
         <section id="hero" class="hero-section">
             <div class="container">
-                <h1>مرحباً بك في <span class="highlight">Titan Gym</span></h1>
-                <p class="subtitle">حيث يبدأ تحولك نحو القوة والصحة.</p>
-                <a href="#classes" class="btn btn-primary">اكتشف كلاساتنا</a>
+                <h1>اطلق العنان لقوتك. انضم إلينا اليوم!</h1>
+                <p>نقدم لك أفضل بيئة تدريبية لتحقيق أهدافك الرياضية.</p>
+                <a href="#contact" class="btn btn-primary">ابدأ الآن</a>
             </div>
         </section>
 
         <section id="about" class="about-section">
             <div class="container">
-                <h2>من نحن؟</h2>
-                <p>في Titan Gym، نؤمن بأن اللياقة البدنية هي رحلة شخصية، ونحن هنا لدعمك في كل خطوة. نقدم بيئة محفزة ومجهزة بأحدث المعدات، وفريق من المدربين المحترفين لمساعدتك على تحقيق أهدافك، سواء كانت فقدان الوزن، بناء العضلات، أو تحسين صحتك العامة.</p>
-                <p>نتميز بالتزامنا تجاه أعضائنا، ونسعى دائمًا لتقديم أفضل تجربة رياضية ممكنة.</p>
+                <h2>من نحن</h2>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/400x300.png?text=Gym+Image+1" alt="صورة للجيم">
+                    <p>نحن في "جيم الأبطال" نؤمن بأن اللياقة البدنية هي مفتاح الحياة الصحية والسعيدة. تأسس الجيم بهدف توفير مساحة ملهمة ومجهزة بأحدث المعدات الرياضية، مع فريق من المدربين المحترفين لمساعدتك في كل خطوة على طريق تحقيق أهدافك، سواء كنت مبتدئًا أو رياضيًا متمرسًا.</p>
+                </div>
             </div>
         </section>
 
-        <section id="classes" class="classes-section">
+        <section id="services" class="services-section">
             <div class="container">
-                <h2>حصصنا التدريبية المميزة</h2>
-                <div class="classes-grid">
-                    <article class="class-item">
-                        <h3>كلاس بناء الأجسام</h3>
-                        <p>تمارين مكثفة لزيادة الكتلة العضلية والقوة البدنية باستخدام الأوزان الحرة والأجهزة المتقدمة.</p>
-                        <p><strong>المدرب:</strong> كابتن أحمد</p>
-                        <p><strong>المواعيد:</strong> السبت، الاثنين، الأربعاء (7:00م - 8:30م)</p>
-                        <a href="#contact" class="btn btn-secondary">سجل الآن</a>
-                    </article>
-                    <article class="class-item">
-                        <h3>كلاس اللياقة الشاملة</h3>
-                        <p>مزيج من تمارين الكارديو والقوة والمرونة لتحسين اللياقة العامة وحرق السعرات الحرارية.</p>
-                        <p><strong>المدرب:</strong> كابتن سارة</p>
-                        <p><strong>المواعيد:</strong> الأحد، الثلاثاء، الخميس (6:00م - 7:00م)</p>
-                        <a href="#contact" class="btn btn-secondary">سجل الآن</a>
-                    </article>
-                    <article class="class-item">
-                        <h3>كلاس يوجا وتأمل</h3>
-                        <p>لتحسين مرونة الجسم وتقليل التوتر من خلال تمارين اليوجا وتقنيات التأمل والاسترخاء.</p>
-                        <p><strong>المدرب:</strong> مدربة نور</p>
-                        <p><strong>المواعيد:</strong> الجمعة (9:00ص - 10:00ص)</p>
-                        <a href="#contact" class="btn btn-secondary">سجل الآن</a>
-                    </article>
+                <h2>خدماتنا وحصصنا</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/300x200.png?text=Service+1" alt="تدريب شخصي">
+                        <h3>تدريب شخصي</h3>
+                        <p>برامج تدريبية مخصصة تناسب احتياجاتك وأهدافك الفردية مع متابعة دقيقة.</p>
                     </div>
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/300x200.png?text=Service+2" alt="حصص جماعية">
+                        <h3>حصص جماعية</h3>
+                        <p>مجموعة متنوعة من الحصص الجماعية الممتعة مثل الزومبا، اليوجا، الكروس فيت، وغيرها.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/300x200.png?text=Service+3" alt="استشارات تغذية">
+                        <h3>استشارات تغذية</h3>
+                        <p>نصائح وبرامج غذائية من خبراء تغذية لمساعدتك على تحقيق أفضل النتائج.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/300x200.png?text=Service+4" alt="منطقة الأوزان الحرة">
+                        <h3>منطقة الأوزان الحرة</h3>
+                        <p>مساحة واسعة مجهزة بأحدث الأوزان والمعدات لبناء العضلات وزيادة القوة.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="trainers" class="trainers-section">
             <div class="container">
-                <h2>تعرف على مدربينا المحترفين</h2>
+                <h2>مدربونا المحترفون</h2>
                 <div class="trainers-grid">
-                    <article class="trainer-item">
-                        <h4>كابتن علي محمد</h4>
-                        <p class="trainer-specialty">متخصص في بناء الأجسام والتغذية الرياضية</p>
-                        <p>خبرة أكثر من 10 سنوات في مجال التدريب، وحاصل على شهادات دولية معتمدة. يساعدك على وضع خطط تدريبية وغذائية مخصصة.</p>
-                    </article>
-                    <article class="trainer-item">
-                        <h4>كابتن فاطمة السيد</h4>
-                        <p class="trainer-specialty">متخصصة في اللياقة البدنية وتمارين السيدات</p>
-                        <p>مدربة شغوفة ومحفزة، تركز على تمكين المرأة من خلال الرياضة وتحقيق التوازن بين القوة والمرونة.</p>
-                    </article>
+                    <div class="trainer-card">
+                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+1" alt="المدرب الأول">
+                        <h3>كابتن أحمد</h3>
+                        <p>خبير لياقة بدنية وكمال أجسام، خبرة أكثر من 10 سنوات.</p>
                     </div>
+                    <div class="trainer-card">
+                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+2" alt="المدربة الثانية">
+                        <h3>كابتن سارة</h3>
+                        <p>متخصصة في حصص اللياقة الجماعية والتغذية الرياضية.</p>
+                    </div>
+                    <div class="trainer-card">
+                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+3" alt="المدرب الثالث">
+                        <h3>كابتن علي</h3>
+                        <p>مدرب كروس فيت معتمد وحاصل على بطولات محلية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <h2>جدول الحصص</h2>
+                <p>هنا يمكنك وضع جدول الحصص الأسبوعي. يمكنك استخدام جدول HTML أو صورة للجدول.</p>
+                <div class="schedule-placeholder">
+                    <p><em>سيتم إضافة الجدول قريباً...</em></p>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>تواصل معنا</h2>
-                <p>هل لديك استفسار أو ترغب في الانضمام؟ لا تتردد في التواصل معنا!</p>
-                <div class="contact-grid">
-                    <div class="contact-form-container">
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">الاسم الكامل:</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">البريد الإلكتروني:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">رقم الهاتف (اختياري):</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">رسالتك:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
-                        </form>
-                        <div id="formMessage" class="form-message" role="alert"></div>
+                <p>هل لديك استفسارات أو ترغب في الانضمام؟ لا تتردد في التواصل معنا!</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">الاسم:</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="contact-info">
-                        <h3>معلومات الاتصال:</h3>
-                        <p><strong>العنوان:</strong> [اكتب عنوان الجيم هنا]، مدينتك، دولتك</p>
-                        <p><strong>الهاتف:</strong> <a href="tel:+201XXXXXXXXX">[+201XXXXXXXXX]</a></p>
-                        <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@titangym.com">info@titangym.com</a></p>
-                        <h3>ساعات العمل:</h3>
-                        <p>السبت - الخميس: 8:00 صباحًا - 11:00 مساءً</p>
-                        <p>الجمعة: 2:00 مساءً - 10:00 مساءً</p>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="message">رسالتك:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <div class="container">
-            <p>&copy; <span id="currentYear"></span> Titan Gym. جميع الحقوق محفوظة.</p>
-            <p>تصميم وتطوير بواسطة [اسمك أو شركتك إذا أردت]</p>
+            <p>&copy; 2025 جيم الأبطال. جميع الحقوق محفوظة.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </footer>
 
