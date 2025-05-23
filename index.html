@@ -1,148 +1,133 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جيم الأبطال - موقعك الرياضي الاحترافي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <title>بيتزا الإسراء - ألذ عجينة في مصر</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" class="logo">جيم الأبطال</a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero">الرئيسية</a></li>
-                    <li><a href="#about">من نحن</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
-                    <li><a href="#trainers">المدربون</a></li>
-                    <li><a href="#schedule">الجدول</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
-                </ul>
-                <button class="nav-toggle" id="navToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <div class="container">
+            <div class="logo">
+                <img src="placeholder_logo.png" alt="لوجو بيتزا الإسراء" id="logoImage"> <div class="logo-text">
+                    <h1>بيتزا الإسراء</h1>
+                    <p>ألذ عجينة في مصر</p>
+                </div>
             </div>
-        </nav>
+            <nav>
+                <a href="#menu">قائمة الطعام</a>
+                <a href="#contact">فروعنا</a>
+                <button id="theme-toggle">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
+        <section id="hero">
             <div class="container">
-                <h1>اطلق العنان لقوتك. انضم إلينا اليوم!</h1>
-                <p>نقدم لك أفضل بيئة تدريبية لتحقيق أهدافك الرياضية.</p>
-                <a href="#contact" class="btn btn-primary">ابدأ الآن</a>
+                <h2>اطلب الآن أشهى المأكولات!</h2>
+                <p>نقدم لكم تشكيلة متنوعة من البيتزا، المكرونات، والمزيد...</p>
+                <a href="#menu" class="btn btn-primary">تصفح قائمة الطعام</a>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <section id="menu" class="menu-section">
             <div class="container">
-                <h2>من نحن</h2>
-                <div class="about-content">
-                    <img src="https://via.placeholder.com/400x300.png?text=Gym+Image+1" alt="صورة للجيم">
-                    <p>نحن في "جيم الأبطال" نؤمن بأن اللياقة البدنية هي مفتاح الحياة الصحية والسعيدة. تأسس الجيم بهدف توفير مساحة ملهمة ومجهزة بأحدث المعدات الرياضية، مع فريق من المدربين المحترفين لمساعدتك في كل خطوة على طريق تحقيق أهدافك، سواء كنت مبتدئًا أو رياضيًا متمرسًا.</p>
-                </div>
-            </div>
-        </section>
+                <h2>قائمة طعام بيتزا الإسراء</h2>
+                <p class="hotline">للطلبات: <a href="tel:15410">15410</a></p>
 
-        <section id="services" class="services-section">
-            <div class="container">
-                <h2>خدماتنا وحصصنا</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <img src="https://via.placeholder.com/300x200.png?text=Service+1" alt="تدريب شخصي">
-                        <h3>تدريب شخصي</h3>
-                        <p>برامج تدريبية مخصصة تناسب احتياجاتك وأهدافك الفردية مع متابعة دقيقة.</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="https://via.placeholder.com/300x200.png?text=Service+2" alt="حصص جماعية">
-                        <h3>حصص جماعية</h3>
-                        <p>مجموعة متنوعة من الحصص الجماعية الممتعة مثل الزومبا، اليوجا، الكروس فيت، وغيرها.</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="https://via.placeholder.com/300x200.png?text=Service+3" alt="استشارات تغذية">
-                        <h3>استشارات تغذية</h3>
-                        <p>نصائح وبرامج غذائية من خبراء تغذية لمساعدتك على تحقيق أفضل النتائج.</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="https://via.placeholder.com/300x200.png?text=Service+4" alt="منطقة الأوزان الحرة">
-                        <h3>منطقة الأوزان الحرة</h3>
-                        <p>مساحة واسعة مجهزة بأحدث الأوزان والمعدات لبناء العضلات وزيادة القوة.</p>
-                    </div>
+                <div class="menu-category">
+                    <h3>قسم البيتزا</h3>
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h4>بيتزا مارجريتا</h4>
+                            <p class="description">مكونات طازجة مع صلصة الإسراء الخاصة.</p>
+                            <p class="price">S: 72 ج.م | M: 93 ج.م | L: 115 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        <div class="menu-item">
+                            <h4>بيتزا خضروات</h4>
+                            <p class="description">مزيج من الخضروات الطازجة.</p>
+                            <p class="price">S: 80 ج.م | M: 100 ج.م | L: 130 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        <div class="menu-item">
+                            <h4>بيتزا بيبروني</h4>
+                            <p class="description">بيبروني فاخر مع جبنة غنية.</p>
+                            <p class="price">S: 95 ج.م | M: 125 ج.م | L: 150 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                         </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="trainers" class="trainers-section">
-            <div class="container">
-                <h2>مدربونا المحترفون</h2>
-                <div class="trainers-grid">
-                    <div class="trainer-card">
-                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+1" alt="المدرب الأول">
-                        <h3>كابتن أحمد</h3>
-                        <p>خبير لياقة بدنية وكمال أجسام، خبرة أكثر من 10 سنوات.</p>
-                    </div>
-                    <div class="trainer-card">
-                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+2" alt="المدربة الثانية">
-                        <h3>كابتن سارة</h3>
-                        <p>متخصصة في حصص اللياقة الجماعية والتغذية الرياضية.</p>
-                    </div>
-                    <div class="trainer-card">
-                        <img src="https://via.placeholder.com/250x250.png?text=Trainer+3" alt="المدرب الثالث">
-                        <h3>كابتن علي</h3>
-                        <p>مدرب كروس فيت معتمد وحاصل على بطولات محلية.</p>
-                    </div>
+                <div class="menu-category">
+                    <h3>المكرونات / PASTA</h3>
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h4>مكرونة نجرسكو</h4>
+                            <p class="description">دجاج، مشروم، صوص بشاميل غني.</p>
+                            <p class="price">95 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        <div class="menu-item">
+                            <h4>مكرونة الفريدو</h4>
+                            <p class="description">دجاج مع صوص الفريدو الكريمي.</p>
+                            <p class="price">105 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="schedule" class="schedule-section">
-            <div class="container">
-                <h2>جدول الحصص</h2>
-                <p>هنا يمكنك وضع جدول الحصص الأسبوعي. يمكنك استخدام جدول HTML أو صورة للجدول.</p>
-                <div class="schedule-placeholder">
-                    <p><em>سيتم إضافة الجدول قريباً...</em></p>
+                <div class="menu-category">
+                    <h3>الكرسبات</h3>
+                     <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h4>كريب بطاطس</h4>
+                            <p class="description">كريب محشو بالبطاطس المقرمشة والصوص.</p>
+                            <p class="price">عادي: 50 ج.م | مالتي: 80 ج.م</p>
+                            <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        <div class="menu-item">
+                            <h4>كريب مكس تشيكن</h4>
+                             <p class="description">قطع دجاج متنوعة مع صوص مميز.</p>
+                            <p class="price">عادي: 75 ج.م | مالتي: 55 ج.م</p>
+                             <button class="btn btn-add-cart">أضف للسلة</button>
+                        </div>
+                        </div>
                 </div>
-            </div>
+                </div>
         </section>
 
         <section id="contact" class="contact-section">
             <div class="container">
-                <h2>تواصل معنا</h2>
-                <p>هل لديك استفسارات أو ترغب في الانضمام؟ لا تتردد في التواصل معنا!</p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">الاسم:</label>
-                        <input type="text" id="name" name="name" required>
+                <h2>فروعنا وخدمة العملاء</h2>
+                <div class="branches">
+                    <div class="branch">
+                        <h3>فرع السنبلاوين</h3>
+                        <p>شارع الزراعية - مول شهرزاد التجاري</p>
+                        <p>الهواتف: <a href="tel:01063922247">01063922247</a> / <a href="tel:0504687200">050-4687200</a></p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني:</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="branch">
+                        <h3>فرع ميت غمر</h3>
+                        <p>شارع بورسعيد - بجوار مطبعة السعادة</p>
+                        <p>الهاتف: <a href="tel:0504673338">050-4673338</a></p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">رسالتك:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">إرسال</button>
-                </form>
+                </div>
+                <p class="hotline">الخط الساخن للطلبات: <strong><a href="tel:15410">15410</a></strong></p>
+                 <p>تطبق رسوم خدمة ١٢٪ على أوردرات الصالة.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 جيم الأبطال. جميع الحقوق محفوظة.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
+            <p>&copy; <span id="currentYear"></span> بيتزا الإسراء. جميع الحقوق محفوظة.</p>
+            <p>تصميم وتطوير كنقطة انطلاق بواسطة Gemini</p>
         </div>
     </footer>
 
