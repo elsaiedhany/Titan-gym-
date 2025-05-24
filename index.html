@@ -3,85 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منيو بيتزا الإسراء</title>
+    <title>منيو بيتزا الإسراء - الأفضل في المدينة</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>بيتزا الإسراء</h1>
+        <p class="tagline">ألذ عجينة في مصر!</p>
         <div class="hotline">اطلب الآن: 15410</div>
     </header>
 
     <div class="branch-selector">
-        <label for="branch">اختر الفرع:</label>
+        <label for="branch">اختر الفرع الأقرب لك:</label>
         <select id="branch" name="branch">
             <option value="tanta">طنطا - شارع الإستاد</option>
-            <option value="senbellawein">السنبلاوين - شارع الزراعية</option>
-            <option value="mitghamr">ميت غمر - شارع بورسعيد</option>
+            <option value="senbellawein">السنبلاوين - شارع الزراعية مول شهرياد التجاري</option>
+            <option value="mitghamr">ميت غمر - شارع بورسعيد بجوار مطبعة السعادة</option>
         </select>
     </div>
 
     <div class="container">
+
         <div class="menu-category">
             <h2>بيتزا ميكسات</h2>
-            
+            <p class="category-description">تشكيلة فريدة من البيتزا المبتكرة بمكونات طازجة ولمسة الإسراء الخاصة!</p>
+
             <div class="menu-item">
-                <div class="item-details">
-                    <h3>مكس تشيكن</h3>
-                    <p class="description">قطع دجاج، فلفل، زيتون، صوص خاص، موتزاريلا</p>
+                <div class="item-image-placeholder">
+                    <span>صورة الصنف</span>
                 </div>
-                <div class="item-actions">
-                    <div class="sizes-prices">
-                        <span>S: <span class="price">85 ج.م</span></span>
-                        <span>M: <span class="price">105 ج.م</span></span>
-                        <span>L: <span class="price">135 ج.م</span></span>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>مكس تشيكن</h3>
+                        <p class="description">مزيج رائع من قطع الدجاج المتبلة، مع الفلفل الملون، الزيتون، وصوص الرانش السري، مغطاة بجبنة الموتزاريلا الذائبة.</p>
                     </div>
-                    <button class="add-to-cart">أضف للسلة</button>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">85 ج.م</span></span>
+                            <span>M: <span class="price">105 ج.م</span></span>
+                            <span>L: <span class="price">135 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
                 </div>
             </div>
 
             <div class="menu-item">
-                <div class="item-details">
-                    <h3>مكس لحوم</h3>
-                    <p class="description">لحم مفروم، سجق، بسطرمة، فلفل، زيتون، موتزاريلا</p>
-                </div>
-                <div class="item-actions">
-                     <div class="sizes-prices">
-                        <span>S: <span class="price">85 ج.م</span></span>
-                        <span>M: <span class="price">110 ج.م</span></span>
-                        <span>L: <span class="price">145 ج.م</span></span>
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>مكس لحوم</h3>
+                        <p class="description">لعشاق اللحوم! توليفة غنية من اللحم المفروم، السجق الشرقي، والبسطرمة، مع الخضروات الطازجة وجبنة الموتزاريلا.</p>
                     </div>
-                    <button class="add-to-cart">أضف للسلة</button>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">85 ج.م</span></span>
+                            <span>M: <span class="price">110 ج.م</span></span>
+                            <span>L: <span class="price">145 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>شيش سي استراس بار</h3>
+                        <p class="description">قطع شيش طاووق متبلة ومشوية، صوص استراس، فلفل، زيتون، موتزاريلا.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">85 ج.م</span></span>
+                            <span>M: <span class="price">110 ج.م</span></span>
+                            <span>L: <span class="price">145 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>سوبريم</h3>
+                        <p class="description">المزيج الكلاسيكي المحبوب: بيبروني، لحم، فلفل، بصل، زيتون، ومشروم.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">83 ج.م</span></span> <span>M: <span class="price">102 ج.م</span></span>
+                            <span>L: <span class="price">132 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
                 </div>
             </div>
              </div>
 
         <div class="menu-category">
-            <h2>المكرونات / PASTA</h2>
+            <h2>بيتزا لحوم</h2>
+            <p class="category-description">نكهات اللحوم الغنية والأصلية فوق عجينة بيتزا الإسراء المميزة.</p>
             <div class="menu-item">
-                <div class="item-details">
-                    <h3>مشروم بالخضار</h3>
-                    <p class="description">مكرونة مع المشروم، فلفل ألوان، صوص، جبن</p>
-                </div>
-                <div class="item-actions">
-                     <div class="sizes-prices">
-                        <span><span class="price">65 ج.م</span></span>
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>هوت دوج</h3>
+                        <p class="description">قطع الهوت دوج الشهية مع صوص الطماطم الغني وجبنة الموتزاريلا.</p>
                     </div>
-                    <button class="add-to-cart">أضف للسلة</button>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">75 ج.م</span></span>
+                            <span>M: <span class="price">95 ج.م</span></span>
+                            <span>L: <span class="price">125 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
                 </div>
             </div>
-             </div>
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>بيبروني</h3>
+                        <p class="description">شرائح البيبروني الكلاسيكية مع طبقة سخية من جبنة الموتزاريلا.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span>S: <span class="price">75 ج.م</span></span>
+                            <span>M: <span class="price">95 ج.م</span></span>
+                            <span>L: <span class="price">125 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+        <div class="menu-category">
+            <h2>المكرونات / PASTA</h2>
+            <p class="category-description">أطباق مكرونة كريمية وغنية بالنكهات، محضرة بعناية لترضي جميع الأذواق.</p>
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>مشروم بالخضار</h3>
+                        <p class="description">مكرونة بيني مع قطع المشروم الطازج، الفلفل الملون، الأعشاب، وصوص الكريمة الأبيض الغني.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span><span class="price">65 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>نجرسكو</h3>
+                        <p class="description">طبق النجرسكو الكلاسيكي بقطع الدجاج، المشروم، والصوص الأبيض الكريمي، مغطى بجبنة الموتزاريلا.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span><span class="price">95 ج.م</span></span>
+                        </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            </div>
 
+        <div class="menu-category">
+            <h2>الكريبات</h2>
+            <p class="category-description">كريبات حلوة ومالحة ترضي كل الأذواق، محضرة من أجود المكونات.</p>
+            <div class="menu-item">
+                <div class="item-image-placeholder"><span>صورة الصنف</span></div>
+                 <div class="item-content">
+                    <div class="item-details">
+                        <h3>كريب مكس تشيكن (مثال)</h3>
+                        <p class="description">قطع دجاج متبلة، خضروات طازجة، جبنة ذايبة، في عجينة كريب ذهبية.</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="sizes-prices">
+                            <span><span class="price">75 ج.م</span></span> </div>
+                        <button class="add-to-cart">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
         </div>
 
     <footer>
-        <p>&copy; 2025 بيتزا الإسراء. كل الحقوق محفوظة.</p>
-        <p>طنطا | السنبلاوين | ميت غمر</p>
-        <p>للطلبات: 15410</p>
-    </footer>
+        <p>&copy; <span id="currentYear"></span> بيتزا الإسراء. ألذ طعم يوصلك!</p>
+        <p>فروعنا: طنطا | السنبلاوين | ميت غمر</p>
+        <p>للطلبات والدعم الفني: 15410</p>
+        </footer>
 
     <script src="script.js" defer></script>
 </body>
