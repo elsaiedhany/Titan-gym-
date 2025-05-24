@@ -1,160 +1,280 @@
-body {
-    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خطوط عربية حديثة */
+/* ------------------------- */
+/* --- Global Resets & Setup --- */
+/* ------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* خلفية رمادية فاتحة قليلاً */
-    color: #333; /* لون النص الأساسي */
 }
+
+body {
+    font-family: 'Cairo', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* خلفية أفتح قليلاً وأكثر حيادية */
+    color: #343a40; /* لون نص أساسي أغمق قليلاً وأكثر وضوحاً */
+    direction: rtl; /* ضمان اتجاه النص من اليمين لليسار */
+}
+
+/* ------------------------- */
+/* --- Typography --- */
+/* ------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* خط أعرض للعناوين */
+    line-height: 1.3;
+    color: #212529; /* لون أسود أقل حدة للعناوين */
+}
+
+/* ------------------------- */
+/* --- Header --- */
+/* ------------------------- */
 header {
-    background-color: #c00000; /* أحمر داكن من هوية المطعم */
-    color: white;
-    padding: 15px 0;
+    background-color: #c00000; /* أحمر العلامة التجارية */
+    color: #ffffff;
+    padding: 20px 15px; /* زيادة الحشوة */
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* ظل أنعم وأكثر احترافية */
 }
-header img.logo {
-    max-height: 60px; /* حجم مناسب للشعار في الهيدر */
+
+header .logo { /* إذا قررت إضافة لوجو */
+    max-height: 70px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em; /* حجم أكبر لاسم المطعم */
     margin-bottom: 5px;
 }
-header h1 {
-    margin: 0;
-    font-size: 2.2em;
-    font-weight: 700;
-}
+
 .hotline {
-    font-size: 1.2em;
-    color: #ffd700; /* لون ذهبي/أصفر للرقم المختصر */
+    font-size: 1.4em; /* حجم أكبر للرقم */
+    color: #ffd700; /* ذهبي */
     font-weight: bold;
-    margin-top: 5px;
 }
+
+/* ------------------------- */
+/* --- Branch Selector --- */
+/* ------------------------- */
 .branch-selector {
     text-align: center;
-    padding: 12px;
-    background-color: #333; /* خلفية داكنة لاختيار الفرع */
-    color: white;
+    padding: 15px;
+    background-color: #343a40; /* خلفية داكنة أنيقة */
+    color: #f8f9fa;
 }
 .branch-selector label {
-    margin-left: 8px;
+    margin-left: 10px;
+    font-size: 1.1em;
 }
 .branch-selector select {
-    padding: 8px;
+    padding: 10px 15px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
-    color: #333;
+    border: 1px solid #ced4da;
+    background-color: #ffffff;
+    color: #495057;
+    font-family: inherit;
+    font-size: 1em;
 }
+
+/* ------------------------- */
+/* --- Main Container --- */
+/* ------------------------- */
 .container {
-    width: 95%;
-    max-width: 1200px; /* حد أقصى لعرض المحتوى */
-    margin: 20px auto;
-    padding: 0 10px;
+    width: 90%; /* عرض أكبر قليلاً */
+    max-width: 1140px; /* حد أقصى شائع للمحتوى */
+    margin: 30px auto; /* زيادة الهامش العلوي والسفلي */
+    padding: 0 15px;
 }
+
+/* ------------------------- */
+/* --- Menu Category Styling --- */
+/* ------------------------- */
 .menu-category {
-    background: #ffffff; /* خلفية بيضاء للأقسام */
-    margin-bottom: 25px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #ffffff;
+    margin-bottom: 30px; /* زيادة المسافة بين الأقسام */
+    padding: 25px; /* زيادة الحشوة الداخلية */
+    border-radius: 12px; /* زوايا أكثر دائرية */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* ظل أعمق وأكثر توزيعاً */
+    border: 1px solid #e9ecef; /* حدود خفيفة */
 }
+
 .menu-category h2 {
-    color: #c00000; /* أحمر داكن لعنوان القسم */
-    font-size: 1.8em;
-    border-bottom: 3px solid #f0f0f0;
-    padding-bottom: 10px;
+    color: #c00000;
+    font-size: 2em; /* تكبير حجم عنوان القسم */
+    text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center; /* توسيط عنوان القسم */
+    margin-bottom: 25px; /* زيادة الهامش السفلي للعنوان */
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dee2e6; /* خط فاصل أنعم */
+    position: relative;
 }
+/* لمسة جمالية لعنوان القسم */
+.menu-category h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffd700; /* استخدام اللون الذهبي كفاصل سفلي مميز */
+    margin: 10px auto 0;
+}
+
+
+/* ------------------------- */
+/* --- Menu Item Styling (Card-like) --- */
+/* ------------------------- */
 .menu-item {
     display: flex;
-    flex-direction: column; /* ترتيب العناصر عمودياً على الشاشات الصغيرة */
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    margin-bottom: 15px;
+    flex-direction: column; /* يبدأ عمودياً للموبايل */
+    background-color: #fdfdfd; /* خلفية خفيفة جداً للصنف */
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px; /* حشوة داخلية جيدة للصنف */
+    margin-bottom: 20px; /* مسافة بين الأصناف */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+.menu-item:hover {
+    transform: translateY(-5px); /* تأثير رفع بسيط عند المرور */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* ظل أوضح عند المرور */
+}
+
 .menu-item:last-child {
-    border-bottom: none;
     margin-bottom: 0;
 }
+
 .menu-item .item-details {
     flex-grow: 1;
+    margin-bottom: 15px; /* مسافة بين التفاصيل والأفعال على الموبايل */
 }
-.menu-item h3 { /* اسم الصنف */
-    margin: 0 0 8px 0;
-    color: #222; /* أسود داكن لاسم الصنف */
-    font-size: 1.3em;
-}
-.menu-item .description { /* وصف الصنف */
+
+.menu-item h3 { /* Item Name */
     margin: 0 0 10px 0;
-    font-size: 0.95em;
-    color: #555;
-    line-height: 1.6;
+    color: #343a40;
+    font-size: 1.4em; /* حجم أكبر لاسم الصنف */
 }
-.item-actions { /* يحتوي على الأحجام والأسعار وزر الإضافة */
+
+.menu-item .description { /* Item Description */
+    margin: 0 0 12px 0;
+    font-size: 1em; /* حجم مناسب للوصف */
+    color: #6c757d; /* لون رمادي للوصف */
+    line-height: 1.7;
+}
+
+.item-actions {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* محاذاة لليسار (أو اليمين في RTL) */
+    align-items: stretch; /* الأزرار والأسعار تأخذ كامل العرض المتاح على الموبايل */
 }
+
 .sizes-prices {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
+    text-align: right; /* محاذاة الأسعار لليمين دائماً */
 }
+
 .sizes-prices span {
     display: inline-block;
-    margin-right: 15px; /* مسافة بين الأحجام */
-    font-size: 1em;
-    color: #444;
+    margin-right: 10px; /* مسافة بين الأحجام */
+    margin-left: 10px; /* مسافة بين الأحجام */
+    font-size: 1.05em;
+    color: #495057;
+    padding: 5px 0;
 }
+.sizes-prices span:last-child{
+    margin-left:0;
+}
+
 .sizes-prices .price {
     font-weight: bold;
-    color: #c00000; /* لون السعر بالأحمر */
+    color: #c00000; /* أحمر للأسعار */
+    font-size: 1.1em;
 }
+
 .add-to-cart {
-    background-color: #FFC107; /* لون أصفر/ذهبي لزر الإضافة */
-    color: #333; /* لون نص داكن للتباين */
-    padding: 10px 18px;
+    background-color: #FFC107; /* أصفر/ذهبي */
+    color: #212529; /* نص أسود للتباين الأفضل */
+    padding: 12px 20px; /* حشوة أكبر للزر */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-.add-to-cart:hover {
-    background-color: #e0a800; /* درجة أغمق عند المرور */
-}
-footer {
+    font-size: 1.1em;
     text-align: center;
-    padding: 25px;
-    background-color: #222; /* خلفية داكنة للفوتر */
-    color: #f0f0f0; /* لون نص فاتح */
-    margin-top: 30px;
-}
-footer p {
-    margin: 5px 0;
+    transition: background-color 0.25s ease, transform 0.1s ease;
+    width: 100%; /* الزر يأخذ كامل العرض في item-actions */
 }
 
-/* Media Queries for Responsiveness */
-@media (min-width: 768px) { /* للشاشات الأكبر مثل التابلت والكمبيوتر */
+.add-to-cart:hover {
+    background-color: #e0a800; /* درجة أغمق */
+    transform: scale(1.02); /* تكبير بسيط للزر عند المرور */
+}
+.add-to-cart:active {
+    transform: scale(0.98); /* تصغير بسيط عند الضغط */
+}
+
+
+/* ------------------------- */
+/* --- Footer --- */
+/* ------------------------- */
+footer {
+    text-align: center;
+    padding: 30px 15px; /* زيادة الحشوة */
+    background-color: #212529; /* أسود داكن جداً للفوتر */
+    color: #dee2e6; /* لون نص فاتح للتباين */
+    margin-top: 40px;
+}
+footer p {
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+footer a { /* إذا أضفت روابط في الفوتر */
+    color: #ffd700;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------- */
+/* --- Responsive Adjustments (Media Queries) --- */
+/* ------------------------- */
+@media (min-width: 768px) { /* شاشات التابلت وما فوق */
     .menu-item {
-        flex-direction: row; /* ترتيب العناصر أفقياً */
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: row;
+        align-items: center; /* محاذاة رأسية أفضل للعناصر */
+    }
+    .menu-item .item-details {
+        margin-bottom: 0; /* إزالة الهامش السفلي عند الترتيب الأفقي */
+        margin-left: 20px; /* إضافة هامش أيسر (في RTL سيكون أيمن) */
     }
     .item-actions {
-        align-items: flex-end; /* محاذاة لليمين (أو اليسار في RTL) */
-        min-width: 200px; /* عرض أدنى لمنطقة الأفعال */
-        text-align: left;
+        flex-direction: column; /* يبقى عمودياً لترتيب الأسعار فوق الزر */
+        align-items: flex-end; /* محاذاة لليسار (في RTL سيكون يمين) */
+        min-width: 220px; /* تحديد عرض أدنى لمنطقة الأفعال */
     }
-    .sizes-prices {
-        margin-bottom: 12px;
-        text-align: right; /* محاذاة الأسعار لليمين */
+    .add-to-cart {
+        width: auto; /* عرض الزر يعتمد على محتواه */
+        min-width: 150px; /* عرض أدنى للزر */
     }
      .menu-category h2 {
-        font-size: 2em; /* تكبير خط عنوان القسم */
+        font-size: 2.2em;
+    }
+}
+
+@media (min-width: 992px) { /* شاشات الكمبيوتر المتوسطة والكبيرة */
+    header h1 {
+        font-size: 2.8em;
+    }
+    .hotline {
+        font-size: 1.6em;
+    }
+    .menu-category h2 {
+        font-size: 2.5em;
+    }
+    .menu-item h3 {
+        font-size: 1.6em;
     }
 }
