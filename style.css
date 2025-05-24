@@ -1,280 +1,147 @@
-/* ------------------------- */
 /* --- Global Resets & Setup --- */
-/* ------------------------- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Cairo', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa; /* خلفية أفتح قليلاً وأكثر حيادية */
-    color: #343a40; /* لون نص أساسي أغمق قليلاً وأكثر وضوحاً */
-    direction: rtl; /* ضمان اتجاه النص من اليمين لليسار */
+    background-color: #f8f9fa;
+    color: #343a40;
+    direction: rtl;
 }
 
-/* ------------------------- */
 /* --- Typography --- */
-/* ------------------------- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700; /* خط أعرض للعناوين */
-    line-height: 1.3;
-    color: #212529; /* لون أسود أقل حدة للعناوين */
-}
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.3; color: #212529; }
+p { margin-bottom: 1rem; } /* إضافة هامش سفلي افتراضي للفقرات */
 
-/* ------------------------- */
 /* --- Header --- */
-/* ------------------------- */
 header {
-    background-color: #c00000; /* أحمر العلامة التجارية */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('images/pizza_banner_placeholder.jpg') no-repeat center center; /* ضع مسار صورة بانر جيدة هنا */
+    background-size: cover;
     color: #ffffff;
-    padding: 20px 15px; /* زيادة الحشوة */
+    padding: 40px 15px; /* زيادة الحشوة */
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* ظل أنعم وأكثر احترافية */
+    position: relative; /* لتأثيرات مستقبلية أو طبقات */
 }
+header .logo { max-height: 80px; margin-bottom: 15px; }
+header h1 { font-size: 3em; margin-bottom: 0.25em; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.tagline { font-size: 1.5em; margin-bottom: 1em; font-weight: 700; color: #ffd700; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); }
+.hotline { font-size: 1.7em; color: #ffd700; font-weight: bold; background-color: rgba(192,0,0,0.8); padding: 5px 15px; border-radius: 5px; display: inline-block;}
 
-header .logo { /* إذا قررت إضافة لوجو */
-    max-height: 70px;
-    margin-bottom: 10px;
-}
-
-header h1 {
-    font-size: 2.5em; /* حجم أكبر لاسم المطعم */
-    margin-bottom: 5px;
-}
-
-.hotline {
-    font-size: 1.4em; /* حجم أكبر للرقم */
-    color: #ffd700; /* ذهبي */
-    font-weight: bold;
-}
-
-/* ------------------------- */
 /* --- Branch Selector --- */
-/* ------------------------- */
-.branch-selector {
-    text-align: center;
-    padding: 15px;
-    background-color: #343a40; /* خلفية داكنة أنيقة */
-    color: #f8f9fa;
-}
-.branch-selector label {
-    margin-left: 10px;
-    font-size: 1.1em;
-}
-.branch-selector select {
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    background-color: #ffffff;
-    color: #495057;
-    font-family: inherit;
-    font-size: 1em;
-}
+.branch-selector { text-align: center; padding: 15px; background-color: #343a40; color: #f8f9fa; }
+.branch-selector label { margin-left: 10px; font-size: 1.1em; }
+.branch-selector select { padding: 10px 15px; border-radius: 5px; border: 1px solid #ced4da; background-color: #ffffff; color: #495057; font-family: inherit; font-size: 1em; }
 
-/* ------------------------- */
 /* --- Main Container --- */
-/* ------------------------- */
-.container {
-    width: 90%; /* عرض أكبر قليلاً */
-    max-width: 1140px; /* حد أقصى شائع للمحتوى */
-    margin: 30px auto; /* زيادة الهامش العلوي والسفلي */
-    padding: 0 15px;
-}
+.container { width: 90%; max-width: 1200px; margin: 30px auto; padding: 0 15px; }
 
-/* ------------------------- */
 /* --- Menu Category Styling --- */
-/* ------------------------- */
-.menu-category {
-    background: #ffffff;
-    margin-bottom: 30px; /* زيادة المسافة بين الأقسام */
-    padding: 25px; /* زيادة الحشوة الداخلية */
-    border-radius: 12px; /* زوايا أكثر دائرية */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* ظل أعمق وأكثر توزيعاً */
-    border: 1px solid #e9ecef; /* حدود خفيفة */
-}
+.menu-category { background: #ffffff; margin-bottom: 40px; padding: 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e9ecef; }
+.menu-category h2 { color: #c00000; font-size: 2.2em; text-align: center; margin-top: 0; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 2px solid #dee2e6; position: relative; }
+.menu-category h2::after { content: ''; display: block; width: 70px; height: 4px; background-color: #ffd700; margin: 10px auto 0; }
+.category-description { font-size: 1.1em; color: #6c757d; text-align: center; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-.menu-category h2 {
-    color: #c00000;
-    font-size: 2em; /* تكبير حجم عنوان القسم */
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px; /* زيادة الهامش السفلي للعنوان */
-    padding-bottom: 15px;
-    border-bottom: 2px solid #dee2e6; /* خط فاصل أنعم */
-    position: relative;
-}
-/* لمسة جمالية لعنوان القسم */
-.menu-category h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #ffd700; /* استخدام اللون الذهبي كفاصل سفلي مميز */
-    margin: 10px auto 0;
-}
-
-
-/* ------------------------- */
-/* --- Menu Item Styling (Card-like) --- */
-/* ------------------------- */
+/* --- Menu Item Styling --- */
 .menu-item {
     display: flex;
-    flex-direction: column; /* يبدأ عمودياً للموبايل */
-    background-color: #fdfdfd; /* خلفية خفيفة جداً للصنف */
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 20px; /* حشوة داخلية جيدة للصنف */
-    margin-bottom: 20px; /* مسافة بين الأصناف */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    flex-direction: column; /* موبايل أولاً */
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    overflow: hidden; /* لضمان احتواء العناصر الداخلية بشكل جيد */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
-.menu-item:hover {
-    transform: translateY(-5px); /* تأثير رفع بسيط عند المرور */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* ظل أوضح عند المرور */
+.menu-item:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+
+.item-image-placeholder {
+    width: 100%;
+    padding-top: 56.25%; /* نسبة العرض إلى الارتفاع 16:9 للصور */
+    background-color: #e9ecef; /* لون مؤقت لمكان الصورة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 1.2em;
+    position: relative; /* للسماح بوضع صورة فعلية فوقه */
+}
+.item-image-placeholder img { /* عند وضع صورة فعلية */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لتغطية المساحة المتاحة بالصورة */
 }
 
-.menu-item:last-child {
-    margin-bottom: 0;
-}
-
-.menu-item .item-details {
-    flex-grow: 1;
-    margin-bottom: 15px; /* مسافة بين التفاصيل والأفعال على الموبايل */
-}
-
-.menu-item h3 { /* Item Name */
-    margin: 0 0 10px 0;
-    color: #343a40;
-    font-size: 1.4em; /* حجم أكبر لاسم الصنف */
-}
-
-.menu-item .description { /* Item Description */
-    margin: 0 0 12px 0;
-    font-size: 1em; /* حجم مناسب للوصف */
-    color: #6c757d; /* لون رمادي للوصف */
-    line-height: 1.7;
-}
-
-.item-actions {
+.item-content { /* يجمع التفاصيل والأفعال */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* الأزرار والأسعار تأخذ كامل العرض المتاح على الموبايل */
+    flex-grow: 1; /* ليأخذ المساحة المتبقية إذا كان بجانب الصورة أفقياً */
 }
 
-.sizes-prices {
-    margin-bottom: 15px;
-    width: 100%;
-    text-align: right; /* محاذاة الأسعار لليمين دائماً */
-}
+.item-details { flex-grow: 1; margin-bottom: 15px; }
+.item-details h3 { margin: 0 0 10px 0; color: #c00000; font-size: 1.6em; }
+.item-details .description { margin: 0 0 12px 0; font-size: 1em; color: #555; line-height: 1.7; }
 
-.sizes-prices span {
-    display: inline-block;
-    margin-right: 10px; /* مسافة بين الأحجام */
-    margin-left: 10px; /* مسافة بين الأحجام */
-    font-size: 1.05em;
-    color: #495057;
-    padding: 5px 0;
-}
-.sizes-prices span:last-child{
-    margin-left:0;
-}
-
-.sizes-prices .price {
-    font-weight: bold;
-    color: #c00000; /* أحمر للأسعار */
-    font-size: 1.1em;
-}
+.item-actions { display: flex; flex-direction: column; align-items: stretch; }
+.sizes-prices { margin-bottom: 15px; width: 100%; text-align: center; /* توسيط الأسعار */ }
+.sizes-prices span { display: inline-block; margin: 0 8px; font-size: 1.1em; color: #333; padding: 5px 0; }
+.sizes-prices .price { font-weight: bold; color: #28a745; /* أخضر للسعر */ font-size: 1.2em; }
 
 .add-to-cart {
-    background-color: #FFC107; /* أصفر/ذهبي */
-    color: #212529; /* نص أسود للتباين الأفضل */
-    padding: 12px 20px; /* حشوة أكبر للزر */
+    background-color: #c00000; /* أحمر الزر الرئيسي */
+    color: #ffffff;
+    padding: 12px 20px;
     text-decoration: none;
     border-radius: 6px;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.15em;
     text-align: center;
     transition: background-color 0.25s ease, transform 0.1s ease;
-    width: 100%; /* الزر يأخذ كامل العرض في item-actions */
+    width: 100%;
 }
+.add-to-cart:hover { background-color: #a00000; /* درجة أغمق */ transform: scale(1.03); }
+.add-to-cart:active { transform: scale(0.97); }
 
-.add-to-cart:hover {
-    background-color: #e0a800; /* درجة أغمق */
-    transform: scale(1.02); /* تكبير بسيط للزر عند المرور */
-}
-.add-to-cart:active {
-    transform: scale(0.98); /* تصغير بسيط عند الضغط */
-}
-
-
-/* ------------------------- */
 /* --- Footer --- */
-/* ------------------------- */
-footer {
-    text-align: center;
-    padding: 30px 15px; /* زيادة الحشوة */
-    background-color: #212529; /* أسود داكن جداً للفوتر */
-    color: #dee2e6; /* لون نص فاتح للتباين */
-    margin-top: 40px;
-}
-footer p {
-    margin: 8px 0;
-    font-size: 0.95em;
-}
-footer a { /* إذا أضفت روابط في الفوتر */
-    color: #ffd700;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-}
+footer { text-align: center; padding: 40px 15px; background-color: #212529; color: #dee2e6; margin-top: 40px; }
+footer p { margin: 8px 0; font-size: 1em; }
+footer a { color: #ffd700; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
 
-/* ------------------------- */
-/* --- Responsive Adjustments (Media Queries) --- */
-/* ------------------------- */
-@media (min-width: 768px) { /* شاشات التابلت وما فوق */
+/* --- Responsive Adjustments --- */
+@media (min-width: 576px) { /* شاشات أكبر من موبايل صغير */
     .menu-item {
-        flex-direction: row;
-        align-items: center; /* محاذاة رأسية أفضل للعناصر */
+        flex-direction: row; /* البدء في العرض الأفقي للصنف والصورة */
     }
-    .menu-item .item-details {
-        margin-bottom: 0; /* إزالة الهامش السفلي عند الترتيب الأفقي */
-        margin-left: 20px; /* إضافة هامش أيسر (في RTL سيكون أيمن) */
+    .item-image-placeholder {
+        width: 200px; /* عرض ثابت للصورة */
+        height: auto; /* الطول يتحدد بنسبة العرض */
+        padding-top: 0; /* إلغاء الحشوة العمودية */
+        min-height: 160px; /* أقل ارتفاع للصورة */
     }
-    .item-actions {
-        flex-direction: column; /* يبقى عمودياً لترتيب الأسعار فوق الزر */
-        align-items: flex-end; /* محاذاة لليسار (في RTL سيكون يمين) */
-        min-width: 220px; /* تحديد عرض أدنى لمنطقة الأفعال */
-    }
-    .add-to-cart {
-        width: auto; /* عرض الزر يعتمد على محتواه */
-        min-width: 150px; /* عرض أدنى للزر */
-    }
-     .menu-category h2 {
-        font-size: 2.2em;
+     .item-content {
+        margin-right: 20px; /* مسافة بين الصورة والمحتوى */
     }
 }
 
-@media (min-width: 992px) { /* شاشات الكمبيوتر المتوسطة والكبيرة */
-    header h1 {
-        font-size: 2.8em;
-    }
-    .hotline {
-        font-size: 1.6em;
-    }
-    .menu-category h2 {
-        font-size: 2.5em;
-    }
-    .menu-item h3 {
-        font-size: 1.6em;
-    }
+@media (min-width: 768px) { /* تابلت وما فوق */
+    header h1 { font-size: 3.5em; }
+    .tagline { font-size: 1.8em; }
+    .hotline { font-size: 1.9em; padding: 8px 20px;}
+    .menu-category h2 { font-size: 2.5em; }
+    .item-details h3 { font-size: 1.7em; }
+    .item-actions { flex-direction: row; justify-content: space-between; align-items: center; }
+    .sizes-prices { margin-bottom: 0; width: auto; text-align: right; }
+    .add-to-cart { width: auto; min-width: 160px; }
+}
+
+@media (min-width: 992px) { /* كمبيوتر */
+    header h1 { font-size: 4em; }
+    .menu-category h2 { font-size: 2.8em; }
+    .item-image-placeholder { width: 250px; min-height: 200px;}
 }
