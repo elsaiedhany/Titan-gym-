@@ -1,234 +1,248 @@
-/* ============== CSS Variables (Custom Properties) ============== */
-:root {
-    --primary-color: #F39C12;    /* برتقالي جذاب */
-    --primary-color-rgb: 243,156,18; /* نفس البرتقالي بصيغة RGB للشفافية */
-    --secondary-color: #D35400;  /* برتقالي أغمق أو أحمر للتأكيد */
-    --text-color: #EAEAEA;       /* لون نص أساسي فاتح (أبيض رمادي) */
-    --text-color-darker: #B0B0B0; /* لون نص أغمق قليلاً (للأوصاف مثلاً) */
-    --background-main: #121212;  /* خلفية رئيسية داكنة جداً (أغمق من السابق) */
-    --background-card: #1E1E1E;  /* خلفية للبطاقات والأقسام (أفتح درجة) */
-    --background-item: #282828;  /* خلفية لعناصر القائمة داخل البطاقات */
-    --border-color: #383838;     /* لون للحدود بين العناصر */
-    --accent-green: #2ECC71;
-    --accent-green-darker: #27AE60;
-    --accent-red: #E74C3C;
-    --accent-red-darker: #C0392B;
-    --font-primary: 'Cairo', 'Open Sans', sans-serif;
-    --font-headings: 'Montserrat', 'Cairo', sans-serif;
-    --shadow-light: rgba(0, 0, 0, 0.3);
-    --shadow-medium: rgba(0, 0, 0, 0.5);
-    --border-radius-sm: 6px;
-    --border-radius-md: 10px;
-    --border-radius-lg: 14px;
-    --container-width: 1200px; /* عرض محتوى الصفحة */
-}
+/* style.css */
 
-/* ============== Global Styles & Body ============== */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-html {
-    scroll-behavior: smooth;
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', 'Open Sans', sans-serif;
 }
 body {
-  font-family: var(--font-primary);
-  line-height: 1.7;
-  background-color: var(--background-main);
-  color: var(--text-color);
-  direction: rtl;
-  overflow-x: hidden; /* منع التمرير الأفقي */
-}
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px; /* حشو جانبي للمحتوى */
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ============== Preloader Styling (من كودك الأصلي مع تعديل ألوان إذا لزم) ============== */
-#preloader { /* ... (تنسيقاتك الأصلية، تأكد من تناسق الألوان) ... */ }
-/* ... (باقي تنسيقات البريلودر) ... */
+/* Preloader */
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-main); /* استخدام لون الخلفية الرئيسي */
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
-#preloader.loaded {
-    opacity: 0;
-    visibility: hidden;
+.loader-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-.loader-ring { /* ... (تنسيقاتك الأصلية للحلقة) ... */ }
 .loader-ring div {
-    border: 7px solid var(--primary-color); /* استخدام اللون الرئيسي */
-    border-color: var(--primary-color) transparent transparent transparent;
-    /* ... (باقي خصائص الحلقة) ... */
+  box-sizing: border-box;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #e50914;
+  border-radius: 50%;
+  animation: ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #e50914 transparent transparent transparent;
+}
+.loader-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loader-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loader-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .loading-text {
-    font-family: var(--font-headings);
-    font-size: 1.2em;
-    color: var(--primary-color); /* استخدام اللون الرئيسي */
-    font-weight: 700;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e50914;
 }
 
-
-/* ============== Hero Section Styling (الجديد) ============== */
-.hero-section {
-    background-color: #000000; /* خلفية سوداء أو داكنة جداً */
-    min-height: 85vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px; /* زيادة الحشو قليلاً */
-    position: relative;
-    overflow: hidden; /* لإخفاء أي أجزاء من تأثيرات بصرية قد تتجاوز الحدود */
+/* Header */
+.main-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: #111;
+  animation: fadeDown 0.8s ease both;
 }
-/* ... (أكمل هنا كل تنسيقات Hero Section التي أرسلتها سابقاً) ... */
-/* .hero-content, .hero-text, .hero-text h1, .hero-text p, .hero-cta-button, .hero-image-container, .hero-image-container img */
-/* مع الأنميشن المقترح لها @keyframes fadeInUp والتأخيرات */
-.hero-text h1, .hero-text p, .hero-text .hero-cta-button, .hero-image-container img {
-    opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease-out forwards;
+.main-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 6px #e50914;
 }
-.hero-text h1 { animation-delay: 0.3s; font-size: 3.2em; line-height: 1.3; }
-.hero-text p { animation-delay: 0.5s; font-size: 1.15em; max-width: 550px; }
-.hero-text .hero-cta-button { animation-delay: 0.7s; font-size: 1.1em; padding: 14px 32px; }
-.hero-image-container img { animation-delay: 0.4s; max-height: 480px; }
-.hero-image-container img:hover { transform: scale(1.05) rotate(1deg); transition: transform 0.4s ease; }
-
-@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-
-/* ============== Featured Categories Section Styling (الجديد) ============== */
-.featured-categories-section { /* ... (أكمل هنا كل تنسيقات Featured Categories التي أرسلتها سابقاً) ... */ }
-/* .section-title, .featured-categories-grid, .category-box, .category-box-content, etc. */
-/* مع الأنميشن المقترح لها (كلاس .animate-category-box و .is-visible) */
-.featured-categories-section { padding: 50px 20px; }
-.section-title { text-align: center; font-family: var(--font-headings); font-size: 2.3em; color: var(--primary-color); margin-bottom: 40px; }
-.featured-categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.category-box { /* ... (تنسيقات المربعات مع صور الخلفية والتأثيرات) ... */ }
-/* #category-box-pizza, #category-box-crepes, #category-box-shawarma (مع background-image) */
-/* تأكد من وضع مسارات صور صحيحة أو ألوان مبدئية */
-#category-box-pizza { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/category-pizza.jpg'); }
-#category-box-crepes { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/category-crepes.jpg'); }
-#category-box-shawarma { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/category-shawarma.jpg'); }
-.category-box { text-decoration: none; color: inherit; background-color: var(--background-card); border-radius: var(--border-radius-lg); overflow: hidden; position: relative; aspect-ratio: 4 / 3.5; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; background-size: cover; background-position: center; }
-.category-box:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 12px 30px rgba(var(--primary-color-rgb),0.25); }
-.category-box-content { position: relative; z-index: 2; text-align: center; }
-.category-box h3 { font-family: var(--font-headings); font-size: 1.7em; color: #FFFFFF; margin-bottom: 8px; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
-.category-box p { font-size: 0.9em; color: #E0E0E0; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); margin-bottom: 0; }
-
-
-/* ============== Main Menu Container & Items Styling (معدل من كودك الأصلي + إضافاتنا) ============== */
-#full-menu-content { max-width: var(--container-width); margin: 40px auto; padding: 0 20px; }
-.menu-category { /* ... (أكمل هنا كل تنسيقات .menu-category مع الطابع الداكن والأنميشن) ... */ }
-.menu-category h2 { /* ... (تنسيقات عنوان الفئة) ... */ }
-.menu-item { /* ... (أكمل هنا كل تنسيقات .menu-item مع الطابع الداكن وتأثيرات التحويم والأنميشن المتتالي) ... */ }
-/* .menu-item h3, .menu-item .description, .menu-item .price */
-/* الأنميشن المتتالي @keyframes cascadeItemIn وتأخيراته */
-.menu-category.is-visible .menu-item { opacity: 0; transform: perspective(600px) rotateX(-15deg) translateY(40px); animation: cascadeItemIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-/* ... (باقي :nth-child() للتأخير أو اعتمد على JS) ... */
-@keyframes cascadeItemIn { to { opacity: 1; transform: perspective(600px) rotateX(0deg) translateY(0); } }
-
-
-/* ============== Add to Cart Buttons Styling (معدل) ============== */
-.add-to-cart-btn { /* ... (أكمل هنا كل تنسيقات زر "أضف للسلة" بالطابع الجديد) ... */ }
-
-
-/* ============== "Show More" Button Styling (الجديد) ============== */
-.item-hidden { display: none; }
-.show-more-btn { /* ... (أكمل هنا كل تنسيقات زر "عرض المزيد") ... */ }
-
-
-/* ============== New Page Sections Styling (الجديدة) ============== */
-.page-section { padding: 50px 20px; margin-bottom: 0; border-top: 1px solid var(--border-color); }
-.page-section:last-of-type { border-bottom: 1px solid var(--border-color); } /* للقسم الأخير قبل الفوتر */
-.page-section.alternate-bg { background-color: var(--background-card); } /* خلفية مختلفة قليلاً لبعض الأقسام */
-
-/* About Us Section */
-.about-us-content { /* ... (تنسيقات قسم "من نحن") ... */ }
-.about-text p { margin-bottom: 18px; font-size: 1em; }
-
-/* Testimonials Section */
-.testimonials-grid { /* ... (تنسيقات قسم "آراء عملائنا") ... */ }
-.testimonial-card { /* ... (تنسيقات بطاقة الرأي) ... */ }
-.testimonial-quote::before { content: '“'; position: absolute; top: -15px; inset-inline-start: -5px; font-size: 3.5em; color: var(--primary-color); opacity: 0.6; font-family: Georgia, serif; }
-
-/* Photo Gallery Section */
-.gallery-grid { /* ... (تنسيقات قسم "معرض الصور") ... */ }
-.gallery-item { /* ... (تنسيقات عنصر الصورة مع تأثير التحويم) ... */ }
-.gallery-item a::after { content: '👁️'; /* ... (تنسيق الأيقونة التي تظهر عند التمرير) ... */ }
-
-/* Contact Us Section */
-.contact-us-grid { /* ... (تنسيقات قسم "اتصل بنا") ... */ }
-.contact-details ul li i { color: var(--primary-color); margin-inline-end: 12px; width: 22px; font-size: 1.1em; }
-.contact-details ul li a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease; }
-.contact-details ul li a:hover { color: var(--primary-color); }
-.map-container iframe { border-radius: var(--border-radius-md); filter: invert(90%) hue-rotate(180deg) brightness(0.9) contrast(0.9); /* لجعل الخريطة داكنة */ }
-
-
-/* ============== Order Preview Bar Styling (معدل من كودك الأصلي) ============== */
-#order-preview-bar { background-color: var(--background-item); color: var(--text-color); /* ... أكمل التعديلات لتناسب الطابع الداكن ... */ }
-/* ... (عدل ألوان .order-preview-header, #cart-items-container, الأزرار الداخلية) ... */
-.btn-qty, .btn-remove-item { background-color: var(--primary-color); /* ... الخ ... */ }
-.btn-danger { background-color: var(--accent-red); /* ... الخ ... */ }
-.btn-success { background-color: var(--accent-green); /* ... الخ ... */ }
-
-
-/* ============== Back to Top Button Styling (معدل من كودك الأصلي) ============== */
-#back-to-top-btn { background-color: var(--primary-color); /* ... أكمل التعديلات ... */ }
-
-
-/* ============== Main Footer Styling (معدل) ============== */
-.main-footer { background-color: var(--background-card); color: var(--text-color-darker); padding: 40px 0; text-align: center; }
-.main-footer .container { /* للتأكد من توسيط محتوى الفوتر */ }
-.main-footer p { margin: 8px 0; font-size: 0.9em; }
-.main-footer .phone-number { color: var(--primary-color); font-weight: bold; }
-.social-media-links { margin: 15px 0; }
-.social-media-links a { color: var(--text-color-darker); text-decoration: none; margin: 0 12px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
-.social-media-links a:hover { color: var(--primary-color); transform: translateY(-3px); }
-.copyright-text { font-size: 0.85em; margin-top: 15px; }
-
-
-/* ============== Animation Helper Classes ============== */
-.animate-on-scroll, .animate-category-box { opacity: 0; } /* بداية الأنيميشن */
-.animate-on-scroll.is-visible, .animate-category-box.is-visible { opacity: 1; transform: translateY(0) !important; /* استخدام !important هنا بحذر إذا كان هناك تعارض */ }
-/* ... (تأكد من أن لديك تعريفات .is-visible لكل أنواع الأنيميشن التي ناقشناها) ... */
-.page-section .animate-on-scroll.is-visible,
-.hero-text .animate-on-scroll.is-visible,
-.hero-image-container .animate-on-scroll.is-visible,
-.featured-categories-section .animate-on-scroll.is-visible,
-.category-box.animate-category-box.is-visible,
-#full-menu-content .animate-on-scroll.is-visible {
-    /* هذا الكلاس العام للظهور التدريجي، ويمكن تخصيص الأنيميشن لكل قسم كما فعلنا */
-    /* transition-delay قد يتم التحكم به عبر JS لـ .menu-item */
+.header-subtitle {
+  font-size: 1rem;
+  color: #ccc;
 }
 
-
-/* ============== Responsive Adjustments (@media queries) ============== */
-/* تأكد من مراجعة كل الأقسام الجديدة وتكييفها للشاشات المختلفة */
-/* ... (أضف هنا أو عدل استعلامات @media الموجودة في كودك الأصلي لتشمل كل الأقسام الجديدة وتنسيقاتها) ... */
-/* مثال: */
-@media (max-width: 992px) {
-    .hero-text h1 { font-size: 2.6em; }
-    /* ... تعديلات للأقسام الأخرى ... */
+/* Menu Categories */
+.menu-category {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #111;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-@media (max-width: 768px) {
-    .hero-content { flex-direction: column-reverse; text-align: center; }
-    .hero-text { text-align: center; }
-    .hero-image-container img { max-height: 320px; margin-bottom: 25px; }
-    .featured-categories-grid { grid-template-columns: 1fr; } /* عمود واحد في الموبايل */
-    .category-box { aspect-ratio: 16 / 9; } /* نسبة مختلفة للموبايل */
-    .section-title { font-size: 2em; }
-    .about-us-content { flex-direction: column; }
-    .contact-us-grid { grid-template-columns: 1fr; }
-    /* ... تعديلات لباقي الأقسام ... */
-} 
+.menu-category.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-category h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #e50914;
+}
+.subcategory-title {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #e50914;
+}
+
+/* Menu Item */
+.menu-item {
+  background: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
+}
+.menu-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.menu-item .price {
+  font-size: 1rem;
+  color: #e50914;
+  margin: 0.2rem 0;
+}
+.menu-item .description {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Footer */
+.main-footer {
+  background: #111;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+.main-footer .phone-number {
+  color: #e50914;
+  font-weight: bold;
+}
+
+/* Order Preview Bar */
+#order-preview-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-height: 400px;
+  background: #111;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+#order-preview-bar.visible {
+  transform: translateY(0);
+}
+.order-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #222;
+  cursor: pointer;
+}
+.cart-icon {
+  margin-right: 0.5rem;
+}
+.toggle-arrow {
+  background: transparent;
+  border: none;
+  color: #e50914;
+  font-size: 1.2rem;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+#order-preview-bar.visible .toggle-arrow {
+  transform: rotate(0deg);
+}
+#cart-items-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0 1rem;
+}
+.empty-cart-message {
+  text-align: center;
+  margin: 1rem 0;
+  color: #ccc;
+}
+.order-preview-footer {
+  padding: 1rem;
+  border-top: 1px solid #333;
+}
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.7);
+}
+.btn-danger {
+  background: #e50914;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.btn-success {
+  background: #28a745;
+  color: #fff;
+}
+
+/* Back to Top */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+#back-to-top-btn.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
