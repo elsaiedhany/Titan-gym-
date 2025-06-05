@@ -3,217 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منيو بيتزا الإسراء - الأفضل في المدينة</title>
+    <title>مطعم بيتزا الإسراء - الطعم الأصلي</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     </head>
 <body>
-    <header>
-        <h1>بيتزا الإسراء</h1>
-        <p class="tagline">تجربة لا تُنسى .. في كل قطعة!</p>
-        <div class="hotline">اطلب الآن: 15410</div>
-    </header>
 
-    <div class="branch-selector">
-        <label for="branch">اختر الفرع الأقرب لك:</label>
-        <select id="branch" name="branch">
-            <option value="tanta">طنطا - شارع الإستاد</option>
-            <option value="senbellawein">السنبلاوين - شارع الزراعية مول شهرياد التجاري</option>
-            <option value="mitghamr">ميت غمر - شارع بورسعيد بجوار مطبعة السعادة</option>
-        </select>
+    <div id="preloader">
+        <div class="loader-ring">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <p class="loading-text">جاري تحميل قائمة الطعام الشهية...</p>
     </div>
 
-    <div class="container">
-
-        <div class="menu-category">
-            <h2>بيتزا ميكسات</h2>
-            <p class="category-description">إبداعات الإسراء في عالم البيتزا! مزيج من النكهات الغنية والمكونات الطازجة التي تأخذك في رحلة مذاق فريدة.</p>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <div class="item-image-placeholder">
-                        <span>صورة مكس تشيكن</span>
-                    </div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>مكس تشيكن</h3>
-                            <p class="description">مزيج رائع من قطع الدجاج المتبلة بعناية، مع الفلفل الملون، الزيتون، وصوص الرانش السري، مغطاة بجبنة الموتزاريلا الذائبة.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">85 ج.م</span></span>
-                                <span>M: <span class="price">105 ج.م</span></span>
-                                <span>L: <span class="price">135 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
+    <header class="main-header hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate-on-scroll">بيتزا الإسراء: كل قطعة تحكي حكاية!</h1>
+                <p class="animate-on-scroll">نقدم لكم أشهى أنواع البيتزا والمأكولات المحضرة بعناية من أجود المكونات الطازجة. تجربة فريدة تنتظرك في كل طبق!</p>
+                <a href="#full-menu-content" class="btn btn-primary hero-cta-button animate-on-scroll">اكتشف القائمة الآن</a>
+            </div>
+            <div class="hero-image-container animate-on-scroll">
+                <img src="images/hero-pizza.jpg" alt="بيتزا شهية - مطعم بيتزا الإسراء">
                 </div>
+        </div>
+    </header>
 
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة مكس لحوم</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>مكس لحوم</h3>
-                            <p class="description">لعشاق اللحوم! توليفة غنية من اللحم المفروم الطازج، السجق الشرقي الأصيل، والبسطرمة الفاخرة، مع الخضروات الطازجة وجبنة الموتزاريلا.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">85 ج.م</span></span>
-                                <span>M: <span class="price">110 ج.م</span></span>
-                                <span>L: <span class="price">145 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
+    <section class="featured-categories-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">أقسامنا الرئيسية</h2>
+            <div class="featured-categories-grid">
+                <a href="#pizza-category" class="category-box animate-category-box" id="category-box-pizza">
+                    <div class="category-box-content">
+                        <h3>البيتزا</h3>
+                        <p>أشهى أنواع البيتزا الطازجة</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة شيش استراس</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>شيش سي استراس بار</h3>
-                            <p class="description">قطع شيش طاووق متبلة ومشوية بإتقان، يضاف إليها صوص استراس المميز، الفلفل، الزيتون، والموتزاريلا الشهية.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">85 ج.م</span></span>
-                                <span>M: <span class="price">110 ج.م</span></span>
-                                <span>L: <span class="price">145 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
+                </a>
+                <a href="#crepes-category" class="category-box animate-category-box" id="category-box-crepes">
+                    <div class="category-box-content">
+                        <h3>الكريبات</h3>
+                        <p>كريبات حلوة ومالحة ترضي ذوقك</p>
                     </div>
-                </div>
+                </a>
+                <a href="#shawarma-category" class="category-box animate-category-box" id="category-box-shawarma">
+                    <div class="category-box-content">
+                        <h3>الشاورما</h3>
+                        <p>أفضل شاورما بالطعم الأصيل</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة سوبريم</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>سوبريم</h3>
-                            <p class="description">المزيج الكلاسيكي المحبوب الذي لا يختلف عليه اثنان: بيبروني، لحم، فلفل، بصل، زيتون، ومشروم طازج.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">83 ج.م</span></span>
-                                <span>M: <span class="price">102 ج.م</span></span>
-                                <span>L: <span class="price">132 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
+    <main id="full-menu-content">
+        <div class="menu-category animate-on-scroll" id="pizza-category">
+            <h2>البيتزا - Pizza</h2>
+            <p style="color: #fff; text-align:center; padding: 20px;">(أضف هنا عناصر قائمة البيتزا من كودك الأصلي)</p>
+            <button class="show-more-btn" aria-expanded="false" style="display: none;">عرض المزيد</button>
+        </div>
+
+        <div class="menu-category animate-on-scroll" id="crepes-category">
+            <h2>الكريبات - Crepes</h2>
+            <p style="color: #fff; text-align:center; padding: 20px;">(أضف هنا عناصر قائمة الكريبات من كودك الأصلي)</p>
+            <button class="show-more-btn" aria-expanded="false" style="display: none;">عرض المزيد</button>
+        </div>
+        
+        <div class="menu-category animate-on-scroll" id="shawarma-category">
+            <h2>الشاورما - Shawarma</h2>
+            <p style="color: #fff; text-align:center; padding: 20px;">(أضف هنا عناصر قائمة الشاورما من كودك الأصلي)</p>
+            <button class="show-more-btn" aria-expanded="false" style="display: none;">عرض المزيد</button>
+        </div>
+
+        </main>
+
+    <section id="about-us" class="page-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">من نحن في بيتزا الإسراء</h2>
+            <div class="about-us-content">
+                <div class="about-text animate-on-scroll">
+                    <p>في مطعم بيتزا الإسراء، نقدم لكم أكثر من مجرد وجبة؛ نقدم تجربة طعام لا تُنسى. منذ تأسيسنا، ونحن ملتزمون باستخدام أجود المكونات الطازجة وشغفنا بالطهي الأصيل لنقدم لكم أطباقاً ترضي جميع الأذواق.</p>
+                    <p>فريقنا من الطهاة المهرة يعمل بشغف لإعداد كل طبق بعناية فائقة. نؤمن بأن الطعام يجمع الناس، ونسعى لأن يكون مطعمنا هو وجهتكم المفضلة للقاءات العائلية والتجمعات مع الأصدقاء.</p>
+                    <p>شعارنا هو الجودة، الخدمة الممتازة، والابتسامة التي نأمل أن نراها على وجوهكم بعد كل زيارة. شكراً لاختياركم بيتزا الإسراء!</p>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <img src="images/about-us-restaurant.jpg" alt="فريق عمل أو داخل مطعم بيتزا الإسراء">
                     </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="page-section alternate-bg">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">ماذا يقول عنا عملاؤنا</h2>
+            <div class="testimonials-grid animate-on-scroll">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"البيتزا هنا لا تُعلى عليها! طعم خرافي وخدمة ممتازة. أنصح الجميع بتجربتها."</p>
+                    <p class="testimonial-author">- عميل رقم #1</p>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"الكريب والشاورما عندهم عالم تاني. كل مرة أطلب منهم أكون أكثر من راضٍ. شكراً بيتزا الإسراء!"</p>
+                    <p class="testimonial-author">- زبون دائم</p>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"مكان رائع للقاء الأصدقاء والاستمتاع بوجبة لذيذة. الأجواء مريحة والأسعار معقولة."</p>
+                    <p class="testimonial-author">- عاشق الأكل</p>
+                    <div class="testimonial-rating">★★★★☆</div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="menu-category">
-            <h2>بيتزا لحوم</h2>
-            <p class="category-description">نكهات اللحوم الغنية والأصلية فوق عجينة بيتزا الإسراء الذهبية والمقرمشة من الأطراف.</p>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة هوت دوج</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>هوت دوج</h3>
-                            <p class="description">قطع الهوت دوج الشهية مع صوص الطماطم الإيطالي الغني بالنكهة وجبنة الموتزاريلا الفاخرة.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">75 ج.م</span></span>
-                                <span>M: <span class="price">95 ج.م</span></span>
-                                <span>L: <span class="price">125 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة بيبروني</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>بيبروني</h3>
-                            <p class="description">لعشاق الطعم الكلاسيكي! شرائح البيبروني اللذيذة مع طبقة سخية من جبنة الموتزاريلا الذائبة.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>S: <span class="price">75 ج.م</span></span>
-                                <span>M: <span class="price">95 ج.م</span></span>
-                                <span>L: <span class="price">125 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
-                </div>
+    <section id="gallery" class="page-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">من أطباقنا الشهية</h2>
+            <div class="gallery-grid animate-on-scroll">
+                <div class="gallery-item"><a href="images/gallery/large/pizza-1.jpg" data-lightbox="restaurant-gallery" data-title="بيتزا بيبروني"><img src="images/gallery/thumb/pizza-1.jpg" alt="بيتزا بيبروني"></a></div>
+                <div class="gallery-item"><a href="images/gallery/large/crepe-1.jpg" data-lightbox="restaurant-gallery" data-title="كريب شوكولاتة"><img src="images/gallery/thumb/crepe-1.jpg" alt="كريب شوكولاتة"></a></div>
+                <div class="gallery-item"><a href="images/gallery/large/shawarma-1.jpg" data-lightbox="restaurant-gallery" data-title="شاورما دجاج"><img src="images/gallery/thumb/shawarma-1.jpg" alt="شاورما دجاج"></a></div>
+                <div class="gallery-item"><a href="images/gallery/large/pasta-1.jpg" data-lightbox="restaurant-gallery" data-title="مكرونة الفريدو"><img src="images/gallery/thumb/pasta-1.jpg" alt="مكرونة الفريدو"></a></div>
+                <div class="gallery-item"><a href="images/gallery/large/meal-1.jpg" data-lightbox="restaurant-gallery" data-title="وجبة كرسبي"><img src="images/gallery/thumb/meal-1.jpg" alt="وجبة كرسبي"></a></div>
+                <div class="gallery-item"><a href="images/gallery/large/drink-1.jpg" data-lightbox="restaurant-gallery" data-title="عصير منعش"><img src="images/gallery/thumb/drink-1.jpg" alt="عصير منعش"></a></div>
                 </div>
         </div>
-        
-        <div class="menu-category">
-            <h2>المكرونات / PASTA</h2>
-            <p class="category-description">أطباق مكرونة كريمية وغنية بالنكهات الأصيلة، محضرة بعناية لترضي جميع الأذواق وتمنحك تجربة دافئة.</p>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة مشروم بالخضار</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>مشروم بالخضار</h3>
-                            <p class="description">مكرونة بيني الشهية مع قطع المشروم الطازج، الفلفل الملون، الأعشاب العطرية، وصوص الكريمة الأبيض الغني.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>طبق: <span class="price">65 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة نجرسكو</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>نجرسكو</h3>
-                            <p class="description">طبق النجرسكو الكلاسيكي الفاخر بقطع الدجاج الطرية، المشروم، والصوص الأبيض الكريمي، مغطى بطبقة من جبنة الموتزاريلا الذهبية.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>طبق: <span class="price">95 ج.م</span></span>
-                            </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </div>
+    </section>
 
-        <div class="menu-category">
-            <h2>الكريبات</h2>
-            <p class="category-description">كريبات ذهبية مقرمشة بحشوات متنوعة، حلوة ومالحة، ترضي كل الأذواق وتناسب كل الأوقات.</p>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <div class="item-image-placeholder"><span>صورة كريب مكس تشيكن</span></div>
-                    <div class="item-content">
-                        <div class="item-details">
-                            <h3>كريب مكس تشيكن (مثال)</h3>
-                            <p class="description">قطع دجاج متبلة شهية، خضروات طازجة، جبنة ذائبة، كلها في قلب عجينة كريب ذهبية ومقرمشة.</p>
-                        </div>
-                        <div class="item-actions">
-                            <div class="sizes-prices">
-                                <span>كريب: <span class="price">75 ج.م</span></span> </div>
-                            <button class="add-to-cart">اطلب الآن</button>
-                        </div>
-                    </div>
+    <section id="contact-us" class="page-section alternate-bg">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">تواصل معنا</h2>
+            <div class="contact-us-grid animate-on-scroll">
+                <div class="contact-details">
+                    <h3><i class="fas fa-info-circle"></i> معلومات التواصل</h3>
+                    <ul>
+                        <li><strong><i class="fas fa-map-marker-alt"></i> العنوان:</strong> [اكتب عنوان مطعمك الكامل هنا]</li>
+                        <li><strong><i class="fas fa-phone-alt"></i> الهاتف الأرضي:</strong> [اكتب رقم الهاتف الأرضي]</li>
+                        <li><strong><i class="fas fa-mobile-alt"></i> رقم التوصيل:</strong> <a href="tel:15410">15410</a></li>
+                        <li><strong><i class="fab fa-whatsapp"></i> واتساب:</strong> <a href="https://wa.me/[YourWhatsAppNumber]" target="_blank">[Your WhatsApp Number]</a></li>
+                        <li><strong><i class="fas fa-envelope"></i> البريد الإلكتروني:</strong> <a href="mailto:info@pizzaalesraa.com">info@pizzaalesraa.com</a></li>
+                    </ul>
                 </div>
+                <div class="opening-hours">
+                    <h3><i class="fas fa-clock"></i> ساعات العمل</h3>
+                    <ul>
+                        <li><strong>السبت - الخميس:</strong> 12:00 ظهراً - 02:00 صباحاً</li>
+                        <li><strong>الجمعة:</strong> 02:00 عصراً - 02:00 صباحاً</li>
+                        <li>(المواعيد قابلة للتغيير في الأعياد والعطلات)</li>
+                    </ul>
                 </div>
+                <div class="map-container">
+                     <h3><i class="fas fa-map-marked-alt"></i> موقعنا على الخريطة</h3>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.720999009784!2d31.34299731511503!3d30.04480998188108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzQxLjMiTiAzMcKwMjAnNDIuNyJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" width="100%" height="300" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+            </div>
         </div>
-        
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>للتوصيل وطلباتكم، اتصل بنا على: <strong class="phone-number">15410</strong></p>
+            <div class="social-media-links">
+                <a href="#" target="_blank" aria-label="Facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram" title="انستجرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="WhatsApp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            <p class="copyright-text">© <span id="currentYear"></span> مطعم بيتزا الإسراء. جميع الحقوق محفوظة. تصميم وتطوير [اسمك أو اسم شركتك إذا أردت]</p>
         </div>
+    </footer>
 
-    <footer>
-        <p>&copy; <span id="currentYear"></span> بيتزا الإسراء. كل الحقوق محفوظة. تصميم وتطوير (مكان لاسم المطور/الشركة إذا أردت).</p>
-        <p>فروعنا: طنطا | السنبلاوين | ميت غمر - جاهزون لخدمتكم!</p>
-        <p>للطلبات والاستفسارات: <a href="tel:15410">15410</a></p>
-        </footer>
+    <div id="order-preview-bar" class="order-preview-hidden">
+        <div class="order-preview-header" id="order-preview-toggle-header">
+            <h3><span class="cart-icon">🛒</span> طلباتي (<span id="cart-item-count">0</span>)</h3>
+            <button id="toggle-order-preview-button" aria-label="إخفاء/إظهار الطلبات" class="toggle-arrow">▼</button>
+        </div>
+        <div id="cart-items-container">
+            <p class="empty-cart-message">سلة طلباتك فارغة حالياً. أضف بعض الأصناف الشهية!</p>
+        </div>
+        <div class="order-preview-footer">
+            <p><strong>الإجمالي: <span id="cart-total">0.00</span> جنيه</strong></p>
+            <button id="clear-cart-button" class="btn btn-danger">مسح كل الطلبات</button>
+            <button id="checkout-button" class="btn btn-success">إتمام الطلب (تجريبي)</button>
+        </div>
+    </div>
 
-    <script src="script.js" defer></script>
-</body>
-</html> 
+    <button id="back-to-top-btn" title="العودة إلى الأعلى">↑</button>
+
+    <script src="script.js"></script>
+    </body>
+</html>
