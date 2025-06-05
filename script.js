@@ -41,4 +41,4 @@ const orderBar = document.getElementById('order-preview-bar');
 const toggleHeader = document.getElementById('order-preview-toggle-header');
 toggleHeader.addEventListener('click', () => {
   orderBar.classList.toggle('visible');
-});
+}); 
