@@ -231,5 +231,4 @@ body {
     .about-us-content { flex-direction: column; }
     .contact-us-grid { grid-template-columns: 1fr; }
     /* ... تعديلات لباقي الأقسام ... */
-}
-
+} 
